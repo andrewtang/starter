@@ -33,32 +33,28 @@ cd Starter
 pnpm install
 ```
 
-3. Set up environment variables:
+3. Set up your database:
+
+**Quick Setup (Interactive):**
+```bash
+pnpm db:setup
+```
+
+**Manual Setup:**
 ```bash
 cp .env.example .env
-```
-
-Edit `.env` and add your database URL:
-```
-DATABASE_URL="postgresql://user:password@localhost:5432/starter?schema=public"
-```
-
-4. Generate Prisma client:
-```bash
+# Edit .env and add your database URL (see DATABASE_SETUP.md for options)
 pnpm db:generate
-```
-
-5. Push the database schema (for development):
-```bash
 pnpm db:push
 ```
 
-Or run migrations (for production):
-```bash
-pnpm db:migrate
-```
+📖 **See [DATABASE_SETUP.md](./DATABASE_SETUP.md) for detailed instructions on:**
+- Supabase (Recommended - Free)
+- Vercel Postgres
+- Railway
+- Local PostgreSQL
 
-6. Start the development server:
+4. Start the development server:
 ```bash
 pnpm dev
 ```
